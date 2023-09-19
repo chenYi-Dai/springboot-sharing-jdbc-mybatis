@@ -1,0 +1,18 @@
+# for eclipse
+.settings/
+*/.DS_Store
+.DS_Store
+.project
+*/.project
+.classpath
+*/.classpath
+target/
+*.jar
+logs/
+.factorypath
+*.iml
+*/*.iml
+/.idea
+sas/
+*/target
+*/*/target
