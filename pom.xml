@@ -51,6 +51,24 @@
             <version>1.1.16</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.sankuai.inf.leaf</groupId>
+            <artifactId>leaf-boot-starter</artifactId>
+            <version>1.0.1-RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>2.6.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j</artifactId>
+                    <groupId>log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!--sharding-jdbc-->
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>

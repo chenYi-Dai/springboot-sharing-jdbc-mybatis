@@ -1,5 +1,8 @@
 package com.wuhao.controller;
 
+import com.sankuai.inf.leaf.common.Result;
+import com.sankuai.inf.leaf.segment.SegmentIDGenImpl;
+import com.sankuai.inf.leaf.service.SegmentService;
 import com.wuhao.configuration.IDUtil;
 import com.wuhao.dao.UserMapper;
 import com.wuhao.domain.User;
@@ -28,6 +31,9 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private SegmentService segmentService;
     
     /***
     * @Description: 添加用戶数据
@@ -39,7 +45,8 @@ public class UserController {
     public void testInsertUser(){
         for(int i=0; i<20 ;i++){
             User user = new User();
-            user.setUserId(IDUtil.getRandomId());
+            //user.setUserId(IDUtil.getRandomId());
+            user.setUserId(segmentService.getId("leaf-segment-test").getId());
             user.setRemark("北京市通州区");
             user.setPassword("10+i"+i);
             user.setRemark("1992-01-01");
