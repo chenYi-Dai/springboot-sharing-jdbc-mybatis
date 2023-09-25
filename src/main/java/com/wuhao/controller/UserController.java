@@ -1,6 +1,7 @@
 package com.wuhao.controller;
 
 import com.sankuai.inf.leaf.common.Result;
+import com.sankuai.inf.leaf.common.Status;
 import com.sankuai.inf.leaf.segment.SegmentIDGenImpl;
 import com.sankuai.inf.leaf.service.SegmentService;
 import com.wuhao.configuration.IDUtil;
@@ -46,7 +47,11 @@ public class UserController {
         for(int i=0; i<20 ;i++){
             User user = new User();
             //user.setUserId(IDUtil.getRandomId());
-            user.setUserId(segmentService.getId("leaf-segment-test").getId());
+            Result result = segmentService.getId("leaf-segment-test");
+            if (result.getStatus().equals(Status.EXCEPTION)) {
+                continue;
+            }
+            user.setUserId(result.getId());
             user.setRemark("北京市通州区");
             user.setPassword("10+i"+i);
             user.setRemark("1992-01-01");

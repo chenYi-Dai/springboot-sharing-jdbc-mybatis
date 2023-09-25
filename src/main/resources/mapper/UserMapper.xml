@@ -12,8 +12,8 @@
 
     <!--用户添加-->
     <insert id="addUser" parameterType="com.wuhao.domain.User">
-        insert into t_user (username, password, remark, sex)
-             values(#{userName}, #{password}, #{remark},  #{sex})
+        insert into t_user (user_id,username, password, remark, sex)
+             values(#{userId},#{userName}, #{password}, #{remark},  #{sex})
     </insert>
 
     <!--用户查询-->
