@@ -1,10 +1,6 @@
-package com.wuhao.configuration;
+package com.wuhao.util;
 
-import com.sankuai.inf.leaf.IDGen;
-import com.sankuai.inf.leaf.common.Result;
-import com.sankuai.inf.leaf.common.Status;
-
-import javax.annotation.Resource;
+import com.wuhao.config.SnowflakeIdWorker;
 
 /**
  * @description: id工具类

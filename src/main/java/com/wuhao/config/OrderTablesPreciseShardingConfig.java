@@ -1,4 +1,4 @@
-package com.wuhao.configuration;
+package com.wuhao.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shardingsphere.api.sharding.standard.PreciseShardingAlgorithm;

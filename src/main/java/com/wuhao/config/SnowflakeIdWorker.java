@@ -1,4 +1,4 @@
-package com.wuhao.configuration;
+package com.wuhao.config;
 
 /**
  * Twitter_Snowflake<br>
