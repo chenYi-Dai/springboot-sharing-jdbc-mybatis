@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @description: userController
@@ -63,6 +65,20 @@ public class UserController {
         log.info("user info |{}",userInfoById);
         return userInfoById;
     }
+
+
+    @ApiOperation(value = "获取列表信息",notes = "getListInfo")
+    @RequestMapping(value = "/api/get-list",method = RequestMethod.GET)
+    public List<User> getListInfo(){
+        Long id = 12L;
+        User userInfoById = userService.getUserInfoById(id);
+        log.info("user info |{}",userInfoById);
+        List list = new ArrayList<>();
+        list.add(userInfoById);
+        return list;
+    }
+
+
 
 
 }
