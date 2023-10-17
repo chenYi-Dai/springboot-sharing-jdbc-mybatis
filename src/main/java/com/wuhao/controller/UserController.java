@@ -6,8 +6,10 @@ import com.sankuai.inf.leaf.segment.SegmentIDGenImpl;
 import com.sankuai.inf.leaf.service.SegmentService;
 import com.sankuai.inf.leaf.service.SnowflakeService;
 import com.sankuai.inf.leaf.snowflake.SnowflakeIDGenImpl;
+import com.wuhao.domain.CallSystemInfo;
 import com.wuhao.domain.User;
 import com.wuhao.service.UserService;
+import com.wuhao.service.impl.CallSystemInfoServiceImpl;
 import com.wuhao.util.IDUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -40,6 +42,9 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private CallSystemInfoServiceImpl callSystemInfoService;
 
     @Resource
     private SegmentService segmentService;
@@ -108,6 +113,13 @@ public class UserController {
         return vector;
     }
 
+    @ApiOperation(value = "获取系统调用授权接口",notes = "getCallList")
+    @RequestMapping(value = "/api/list",method = RequestMethod.GET)
+    public List<CallSystemInfo> getCallList(){
+        List<CallSystemInfo> list = callSystemInfoService.getList();
+        return list;
+    }
+
 
 
     @ApiOperation(value = "获取用户id",notes = "getUserInfo")
@@ -129,6 +141,8 @@ public class UserController {
         list.add(userInfoById);
         return list;
     }
+
+
 
     public static void main(String[] args) {
         String str = "\n" +

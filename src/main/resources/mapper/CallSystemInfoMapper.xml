@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.wuhao.dao.CallSystemInfoMapper">
+
+    <sql id="baseQuery">
+        Fcall_system_ID as callSystemId,
+        Fcall_name as callName,
+        Fauth_interface_flag as authInterfaceFlag,
+        Fkey_ver_sign as keyVerSign,
+        Fkey_seq_sign as keySeqSign,
+        Fstatus as status,
+        Fcreate_time as createTime
+    </sql>
+
+    <resultMap id="BaseResultMap" type="com.wuhao.domain.CallSystemInfo">
+        <id column="callSystemId" property="callSystemId" jdbcType="VARCHAR"/>
+        <result column="callName" property="callName" jdbcType="VARCHAR"/>
+        <result column="authInterfaceFlag" property="authInterfaceFlag" jdbcType="INTEGER"/>
+        <result column="jdbcType" property="keyVerSign" jdbcType="INTEGER"/>
+        <result column="keySeqSign" property="keySeqSign" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="createTime" property="createTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <select id="getCallList" resultType="com.wuhao.domain.CallSystemInfo">
+        select
+            <include refid="baseQuery"/>
+        from
+            t_call_system_info
+    </select>
+
+
+    </mapper>
+
